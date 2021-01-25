@@ -2,8 +2,7 @@ name: ci-golang-workflow-test
 on:
   pull_request:
     branches:
-      - develop   
-      
+      - develop          
       
 jobs:
   check-application:
