@@ -6,10 +6,9 @@ on:
       
 jobs:
   check-application:
-    build:    
-      runs-on: ubuntu-18.04    
-      env:
-        DOCKER_TARGET_PLATFORM: linux/arm/v7     
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_TARGET_PLATFORM: linux/arm/v7   
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
