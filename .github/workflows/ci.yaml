@@ -6,7 +6,7 @@ on:
       
 jobs:
   check-application:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04  
     env:      
       DOCKER_REGISTRY: kemansel.azurecr.io      
       DOCKER_IMAGE: kmansel/express-me      
@@ -47,6 +47,6 @@ jobs:
           docker buildx build \        
           --platform ${{ steps.prepare.outputs.docker_platform }} \             
           --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }} \        
-          --file ./Dockerfile \        
+          --file ./golang/Dockerfile \        
           --output type=image,push=true .
-     
+    
