@@ -38,7 +38,7 @@ jobs:
       - name: Docker Login      
         if: success()      
         run: |        
-           echo "${DOCKER_PASSWORD}" | docker login ${DOCKER_REGISTRY} --username "${DOCKERHUB_USERNAME}" --password-stdin "${DOCKERHUB_TOKEN}"         
+           echo "${DOCKER_PASSWORD}" | docker login ${DOCKER_REGISTRY} --username "${DOCKERHUB_USERNAME}" --password-stdin         
    
       - name: Run Buildx (push image)      
         if: success()      
