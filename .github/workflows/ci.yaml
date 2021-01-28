@@ -8,8 +8,8 @@ jobs:
   check-application:
     runs-on: ubuntu-18.04  
     env:      
-      DOCKER_REGISTRY: kemansel.azurecr.io      
-      DOCKER_IMAGE: kmansel/express-me      
+      DOCKER_REGISTRY: dockerzindoallan     
+      DOCKER_IMAGE: dockerzindoallan/teste1.0-ci      
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
       DOCKER_TARGET_PLATFORM: linux/arm/v7   
@@ -34,7 +34,7 @@ jobs:
           echo ::set-output name=docker_platform::${DOCKER_TARGET_PLATFORM}        
           echo ::set-output name=docker_image::${DOCKER_REGISTRY}/${DOCKER_IMAGE}        
           echo ::set-output name=version::${GITHUB_RUN_NUMBER}
-          
+
       - name: Docker Login      
         if: success()      
         run: |        
