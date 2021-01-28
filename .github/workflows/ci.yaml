@@ -5,6 +5,9 @@ on:
       - develop          
       
 jobs:
+  builds:
+     env:
+       DOCKER_TARGET_PLATFORM: linux/arm/v7
   check-application:
     runs-on: ubuntu-latest   
     steps:
